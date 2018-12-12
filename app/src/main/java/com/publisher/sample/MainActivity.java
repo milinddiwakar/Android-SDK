@@ -35,12 +35,17 @@ public class MainActivity extends AppCompatActivity {
     // Get your Vungle App ID and Placement ID information from Vungle Dashboard
     final String LOG_TAG = "VungleSampleApp";
 
-    final String app_id = "5ae0db55e2d43668c97bd65e";
-    private final String autocachePlacementReferenceID = "DEFAULT-6595425";
-    private final List<String> placementsList =
-            Arrays.asList(autocachePlacementReferenceID, "DYNAMIC_TEMPLATE_INTERSTITIAL-6969365", "FLEX_FEED-2416159");
+    //Application ID of Sample Integration application on Vungle
+    final String app_id = "5bee2e4c3667554b81cb69d9";
 
+    //Placement DEFAULT-7778184 is cached on device
+    private final String autocachePlacementReferenceID = "DEFAULT-7778184";
+    private final List<String> placementsList =
+            Arrays.asList(autocachePlacementReferenceID, "VINT-3594453", "FLEX_FEED-1785445");
+
+    //Relative layout to display the flexfeed  which allows the user to continue interact with App while the Ad is displayed
     private RelativeLayout flexfeed_container;
+
     private VungleNativeAd vungleNativeAd;
     private View nativeAdView;
 
@@ -57,19 +62,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess() {
                 Log.d(LOG_TAG, "InitCallback - onSuccess");
-
-//                // Usage example of GDPR API
-//                // To set the user's consent status to opted in:
-//                Vungle.updateConsentStatus(Vungle.Consent.OPTED_IN, “1.0.0”);
-//
-//                // To set the user's consent status to opted out:
-//                Vungle.updateConsentStatus(Vungle.Consent.OPTED_OUT, “1.0.0”);
-//
-//                // To find out what the user's current consent status is:
-//                // This will return null if the GDPR Consent status has not been set
-//                // Otherwise, it will return Vungle.Consent.OPTED_IN or Vungle.Consent.OPTED_OUT
-//                Vungle.Consent currentStatus = Vungle.getConsentStatus();
-//                String consentMessageVersion = Vungle.getConsentMessageVersion();
 
                 runOnUiThread(new Runnable() {
                     @Override
